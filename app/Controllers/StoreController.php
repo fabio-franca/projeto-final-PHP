@@ -5,7 +5,6 @@ use App\Models\ProductModel;
 
 class StoreController extends BaseController
 {
-    
     private $model;
 
     public function __construct()
@@ -14,7 +13,6 @@ class StoreController extends BaseController
     }
 
     public function index() {
-
         $data['result'] = $this->model->find();
 
         # Carregamento da view...
@@ -22,9 +20,7 @@ class StoreController extends BaseController
     }
 
     public function cart() {
-        $data = array();
-
-        
+        $data = array();        
     }
 }
 

@@ -62,7 +62,6 @@ $routes->get('/produtos/inserir', 'ProductController::insertProduct');
 $routes->get('/produtos/editar/(:any)', 'ProductController::editProduct/$1');
 $routes->post('/produtos/deletar', 'ProductController::deleteProduct');
 $routes->post('/produtos/salvar', 'ProductController::save');
-$routes->resource('ProductsApi');
 
 ######## ROTA DE FORNECEDORES ########
 $routes->get('/fornecedores/lista', 'SupplierController::listSuppliers');

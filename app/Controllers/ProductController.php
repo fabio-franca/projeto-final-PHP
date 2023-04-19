@@ -18,9 +18,7 @@ class ProductController extends BaseController
 
     public function listProducts()
     {
-        //$data['result'] = $this->model->find();        
-        //return view('products/list', $data);
-        
+
         # Verifica se existe alguem logado
         if(!LoginController::isLogged()){
             return redirect()->to("/logar");
@@ -48,8 +46,9 @@ class ProductController extends BaseController
             return redirect()->to("/logar");
         }
         $data['title'] = "Edição de Produtos";
-        $data['result'] = $this->model->find($id);        
-        echo $this->load("products", "update", $data); 
+        $data['result'] = $this->model->find($id); 
+
+        echo $this->load("products", "insert_update", $data); 
     }
 
     public function insertProduct(){
@@ -57,13 +56,17 @@ class ProductController extends BaseController
             return redirect()->to("/logar");
         }
         //return view("products/insert");
-        $data['title'] = "Inserção de Produtos";
-
-        # Objetos criados para o controlador atual
-        $datatable = new DataTables();      
+        $data['title'] = "Inserção de Produtos";  
        
+        $formularioLimpo['product_name'] = '';
+        $formularioLimpo['product_code'] = '';
+        $formularioLimpo['product_price'] = '';
+        $formularioLimpo['product_stock'] = '';
+
+        $data['result'] = $formularioLimpo;
+
         # Carregamento da view...
-        echo $this->load("products", "insert", $data); 
+        echo $this->load("products", "insert_update", $data); 
     }
 
     public function save(){
@@ -75,7 +78,7 @@ class ProductController extends BaseController
         //var_dump($data);
         $this->model->save($data);
 
-        $this->setMessage("success", "Produto inserido/atualizado com sucesso!"); 
+        $this->setMessage("success", "Produto salvo com sucesso!"); 
 
         return redirect()->to('produtos/lista');
 

@@ -60,8 +60,6 @@ class PerfilController extends BaseController
         $this->setMessage("success", "Dados alterados com sucesso!");
 
         return redirect()->to('/dashboard/perfil/');
-
-
     }
 
 }

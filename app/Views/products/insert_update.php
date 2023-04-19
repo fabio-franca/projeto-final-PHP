@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Titulo</h1>
+        <h1 class="m-0"><?= $title ?></h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -25,34 +25,40 @@
     <div class="card">
       <div class="card-header bg-gradient-secondary">
         <h3 class="card-title">
-          Atualização de Produtos
+          <?= (isset($result["id_product"]))? 'Atualização ': 'Cadastro '; ?> de Produto
         </h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
+
         <form action="<?= base_url(); ?>/produtos/salvar" method="POST">
           <div class="card-body row">
             <div class="form-group col-md-6">
               <label for="exampleInputEmail1">Nome do Produto</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o dado" value="<?= $result["product_name"]; ?>" name="product_name">
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o dado" 
+                name="product_name" value="<?= $result["product_name"]; ?>" required>
             </div>
 
             <div class="form-group col-md-6">
               <label for="exampleInputEmail1">Codigo do Produto</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o dado" value="<?= $result["product_code"]; ?>" name="product_code">
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o dado" 
+                name="product_code" value="<?= $result["product_code"]; ?>" required>
             </div>
 
             <div class="form-group col-md-6">
               <label for="exampleInputEmail1">Preço do Produto</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o dado" value="<?= $result["product_price"]; ?>" name="product_price">
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o dado" 
+                name="product_price" value="<?= $result["product_price"]; ?>" required>
             </div>
 
             <div class="form-group col-md-6">
               <label for="exampleInputEmail1">Estoque do Produto</label>
-              <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Digite o dado" value="<?= $result["product_stock"]; ?>" name="product_stock">
+              <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Digite o dado" 
+                name="product_stock" value="<?= $result["product_stock"]; ?>" required>
             </div>
 
-            <input type="hidden" value="<?= $result["id_product"]; ?>" name="id_product">
+            <input type="hidden" name="id_product"
+              value="<?= (isset($result["id_product"]))? $result["id_product"]: ''; ?>" >
 
           </div>
           <!-- /.card-body -->
@@ -61,7 +67,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </form>
-
       </div>
       <!-- /.card-body -->
     </div>

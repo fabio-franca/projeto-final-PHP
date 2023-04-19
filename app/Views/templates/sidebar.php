@@ -3,8 +3,8 @@
     <!-- Brand Logo -->
     <a href="<?=base_url();?>/index.php" class="brand-link">
       <!-- <img src="<?=base_url();?>/public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-      <img src="https://w7.pngwing.com/pngs/163/964/png-transparent-contract-computer-icons-rental-agreement-others-miscellaneous-angle-text-thumbnail.png" alt="Logo Contratos" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Sistema V1.0</span>
+      <img src="<?=base_url();?>/public/assets/images/powersystem.jpg" alt="Logo Contratos" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">PowerSystem v2.0</span>
     </a>
 
     <!-- Sidebar -->

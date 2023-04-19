@@ -24,18 +24,56 @@
       <div class="row">
         <div class="col-lg-3 col-6">
           <!-- small box -->
-          <div class="small-box bg-info">
+          <div class="small-box bg-primary">
             <div class="inner">
-              <h4><strong>0</strong></h4>
-              <p>Visão</p>
+              <h4><strong><?=$products?></strong></h4>
+              <p>Produtos</p>
             </div>
             <div class="icon">
-              <span class="iconify" data-icon="fa6-solid:file-contract"></span>
+              <span class="iconify" data-icon="fa6-solid:box-open"></span>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
-        </div>
-        
+        </div> 
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-info">
+            <div class="inner">
+              <h4><strong><?=$suppliers?></strong></h4>
+              <p>Fornecedores</p>
+            </div>
+            <div class="icon">
+              <span class="iconify" data-icon="fa6-solid:truck"></span>
+            </div>
+            <a href="#" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div> 
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-success">
+            <div class="inner">
+              <h4><strong><?=$clients?></strong></h4>
+              <p>Clientes</p>
+            </div>
+            <div class="icon">
+              <span class="iconify" data-icon="fa6-solid:person"></span>
+            </div>
+            <a href="#" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div> 
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h4><strong><?=$users?></strong></h4>
+              <p>Usuários</p>
+            </div>
+            <div class="icon">
+              <span class="iconify" data-icon="fa6-solid:users"></span>
+            </div>
+            <a href="#" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div> 
       </div>
       <!-- /.row -->
       <!-- Main row -->

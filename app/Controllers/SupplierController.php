@@ -5,8 +5,6 @@ namespace App\Controllers;
 use App\Libraries\Datatables; // Datatables
 use App\Controllers\LoginController;
 use App\Models\SupplierModel;
-use \stdClass;
-
 
 class SupplierController extends BaseController
 {
@@ -39,8 +37,6 @@ class SupplierController extends BaseController
 
         # Carregamento da view...
         echo $this->load("suppliers", "list", $data);    
-    
-    
     }
 
     public function editSupplier($id)
@@ -79,20 +75,18 @@ class SupplierController extends BaseController
 
         $data = $request->getPost();
 
-        //var_dump($data);
         $this->model->save($data);
 
         $this->setMessage("success", "Fornecedor salvo com sucesso!"); 
 
         return redirect()->to('fornecedores/lista');
-
     }
 
     public function deleteSupplier(){
         
         $request = \Config\Services::request();
         $data = $request->getPost();
-        //$id = $data['id'];
+
         $this->model->delete($data['id']);
         $this->setMessage("success", "Fornecedor excluído com sucesso!"); 
         return redirect()->to('fornecedores/lista');

@@ -3,7 +3,7 @@
   <strong>Copyright &copy; <?=date('Y');?> <a href="#">Universidade do Trabalho Digital </a>.</strong>
   Todos os direitos reservados.
   <div class="float-right d-none d-sm-inline-block">
-    <b>Versão</b> 0.1.1
+    <b>PowerSystem Versão</b> 2.0
   </div>
 </footer>
 

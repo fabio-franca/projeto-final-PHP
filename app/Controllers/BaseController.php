@@ -69,13 +69,7 @@ class BaseController extends Controller
 
     public function store($view, $page, $data)
     {
-        //$data['js'] = $this->js;
-        //$data['css'] = $this->css;
-
         echo view('template_store/index', $data);
-        //echo view("$view/$page");
-        //echo view('templates/content');        
-        //echo view('templates/footer');
     }
 
     public function store_client($view, $page, $data)

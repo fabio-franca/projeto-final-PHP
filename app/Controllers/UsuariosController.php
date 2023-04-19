@@ -22,7 +22,6 @@ class UsuariosController extends BaseController
         $this->model = new UsuariosModel;
     }
 
-
     public function lista()
     {
 
@@ -88,7 +87,6 @@ class UsuariosController extends BaseController
 
         $data = $request->getPost();
 
-        //var_dump($data);
         $this->model->save($data);
 
         $this->setMessage("success", "Usuário salvo com sucesso!"); 
@@ -97,8 +95,7 @@ class UsuariosController extends BaseController
 
     }
 
-    public function deleteUser(){
-        
+    public function deleteUser(){    
         $request = \Config\Services::request();
         $data = $request->getPost();
 

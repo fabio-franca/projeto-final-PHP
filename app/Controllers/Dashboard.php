@@ -2,7 +2,10 @@
 
 namespace App\Controllers;
 use App\Controllers\LoginController;
-use App\Models\LoginModel;
+use App\Models\ClientModel;
+use App\Models\ProductModel;
+use App\Models\SupplierModel;
+use App\Models\UsuariosModel;
 
 class Dashboard extends BaseController
 {
@@ -12,16 +15,17 @@ class Dashboard extends BaseController
         if(!LoginController::isLogged()){
             return redirect()->to("/logar");
         }
+
+        $products = new ProductModel();
+        $suppliers = new SupplierModel();
+        $clients = new ClientModel();
+        $users = new UsuariosModel();
         
         $data['title'] = "Painel de Controle";
-        //$data['user'] = $this->session = \Config\Services::session();
-        // //return view('dashboard/index', $data);
-        // echo view('templates/head', $data);
-        // echo view('templates/header', $data);
-        // echo view('templates/sidebar', $data);
-        // echo view('dashboard/index');
-        // echo view('templates/content', $data);        
-        // echo view('templates/footer', $data);
+        $data['products'] = $products->countAll('id_product');
+        $data['suppliers'] = $suppliers->countAll('id_supplier');
+        $data['clients'] = $clients->countAll('id_client');
+        $data['users'] = $users->countAll('id_user');
 
         echo $this->load("dashboard", "index", $data);
     }

@@ -78,7 +78,6 @@ class LoginController extends BaseController
         return view("pages/login", $data);
     }
 
-
     public function logout()
     {
         $this->session->set(self::$sessionName, array());
@@ -87,10 +86,8 @@ class LoginController extends BaseController
         return redirect()->to('/');
     }
 
-
     public static function isLogged()
     {
-
         $session = \Config\Services::session();
         $sessao = $session->get(self::$sessionName);
 
